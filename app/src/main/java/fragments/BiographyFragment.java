@@ -24,15 +24,6 @@ public class BiographyFragment extends Fragment {
     private View view;
     private int position = 0;
 
-    @BindView(R.id.details_title)
-    TextView detailsTitle;
-
-    @BindView(R.id.details_image_view)
-    ImageView detailsImageView;
-
-    @BindView(R.id.details_description)
-    TextView detailsDescription;
-
     public BiographyFragment() {
     }
 
@@ -50,8 +41,7 @@ public class BiographyFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        ButterKnife.bind(view);
-        
+
         if (getArguments() != null) {
             position = getArguments().getInt("position");
         }
@@ -62,6 +52,9 @@ public class BiographyFragment extends Fragment {
     }
 
     private void setElements(Viagem viagem) {
+        TextView detailsTitle = view.findViewById(R.id.details_title);
+        ImageView detailsImageView = view.findViewById(R.id.details_image_view);
+        TextView detailsDescription = view.findViewById(R.id.details_description);
         detailsTitle.setText(viagem.getCidade());
         detailsImageView.setImageResource(viagem.getFoto());
         detailsDescription.setText(viagem.getDescricao());

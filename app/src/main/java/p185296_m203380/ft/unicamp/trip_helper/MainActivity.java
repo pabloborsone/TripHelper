@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity
             }
             replaceFragment(authorFragment, MainActivity.AUTHORS_KEY);
         } else if (id == R.id.nav_students) {
-            
+
         } else if (id == R.id.nav_biography) {
             Fragment biographyFragment = fragmentManager.findFragmentByTag(MainActivity.BIOGRAPHY_KEY);
             if (biographyFragment == null) {
