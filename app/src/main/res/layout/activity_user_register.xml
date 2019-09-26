@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/japan"
@@ -31,9 +32,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:buttonTint="@color/white"
             android:text="@string/yes"
             android:textColor="@color/white"
-            android:buttonTint="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/user_already_traveled_textview"
             app:layout_constraintEnd_toEndOf="@+id/radioGroup"
             app:layout_constraintHorizontal_bias="1.0"
@@ -70,25 +71,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/white"
-                android:textColor="@color/white"
-                android:text="@string/user_radio_male" />
+                android:text="@string/user_radio_male"
+                android:textColor="@color/white" />
 
             <RadioButton
                 android:id="@+id/user_radio_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/white"
-                android:textColor="@color/white"
-                android:text="@string/user_radio_female" />
+                android:text="@string/user_radio_female"
+                android:textColor="@color/white" />
 
             <RadioButton
                 android:id="@+id/user_radio_others"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/white"
-                android:textColor="@color/white"
-                android:text="@string/user_radio_others" />
+                android:text="@string/user_radio_others"
+                android:textColor="@color/white" />
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/user_sex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/user_sex_textview"
+            app:layout_constraintEnd_toEndOf="@+id/username"
+            app:layout_constraintStart_toStartOf="@+id/username"
+            app:layout_constraintTop_toTopOf="@+id/user_sex_textview" />
 
         <TextView
             android:id="@+id/username_textview"
@@ -160,6 +172,17 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/user_birth_date_textview"
             app:layout_constraintTop_toBottomOf="@+id/user_birth_date_textview" />
+
+        <TextView
+            android:id="@+id/user_check_box_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/user_already_traveled_textview"
+            app:layout_constraintEnd_toEndOf="@+id/user_sex"
+            app:layout_constraintStart_toEndOf="@+id/user_already_traveled_textview"
+            app:layout_constraintTop_toTopOf="@+id/user_already_traveled_textview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

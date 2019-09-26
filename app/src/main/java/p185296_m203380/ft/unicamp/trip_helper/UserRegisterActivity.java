@@ -3,11 +3,12 @@ package p185296_m203380.ft.unicamp.trip_helper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,6 +42,12 @@ public class UserRegisterActivity extends AppCompatActivity {
     @BindView(R.id.user_already_traveled)
     CheckBox checkBox;
 
+    @BindView(R.id.user_sex)
+    TextView userSexTextView;
+
+    @BindView(R.id.user_check_box_text)
+    TextView checkBoxText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +55,9 @@ public class UserRegisterActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         addAllListeners();
+        if (hasRegister()) {
+            alreadyRegistered();
+        }
     }
 
     private void init() {
@@ -68,23 +78,33 @@ public class UserRegisterActivity extends AppCompatActivity {
     }
 
     private void addAllListeners() {
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.user_radio_male) {
-                    userSex = sexMale.getText().toString();
-                } else if (i == R.id.user_radio_female) {
-                    userSex = sexFemale.getText().toString();
-                } else if (i == R.id.user_radio_others) {
-                    userSex = sexOthers.getText().toString();
-                }
+        radioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            if (i == R.id.user_radio_male) {
+                userSex = sexMale.getText().toString();
+            } else if (i == R.id.user_radio_female) {
+                userSex = sexFemale.getText().toString();
+            } else if (i == R.id.user_radio_others) {
+                userSex = sexOthers.getText().toString();
             }
         });
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                alreadyTraveledAbroad = b;
-            }
-        });
+        checkBox.setOnCheckedChangeListener((compoundButton, b) -> alreadyTraveledAbroad = b);
+    }
+
+    private void alreadyRegistered() {
+        radioGroup.setVisibility(View.GONE);
+        userSexTextView.setVisibility(View.VISIBLE);
+        checkBoxText.setVisibility(View.VISIBLE);
+        checkBox.setVisibility(View.GONE);
+        userSexTextView.setText(getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_SEX, null));
+        checkBoxText.setText(getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_TRAVELED_ABROAD, null));
+        name.setText((getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USERNAME, null)));
+        birthDate.setText((getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_BIRTH_DAY, null)));
+    }
+
+    private boolean hasRegister() {
+        return (!getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_SEX, null).isEmpty()
+                || !getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_TRAVELED_ABROAD, null).isEmpty()
+                || !getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USERNAME, null).isEmpty()
+                || !getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_BIRTH_DAY, null).isEmpty());
     }
 }

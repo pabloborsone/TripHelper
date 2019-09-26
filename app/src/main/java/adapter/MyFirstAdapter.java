@@ -18,7 +18,6 @@ public class MyFirstAdapter extends RecyclerView.Adapter {
 
     private ArrayList<Viagem> viagens;
     private MyOnItemClickListener myOnItemClickListener;
-    private MyOnItemLongClickListener myOnItemLongClickListener;
 
     public MyFirstAdapter(ArrayList<Viagem> viagens) {
         this.viagens = viagens;
@@ -51,15 +50,6 @@ public class MyFirstAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_layout, parent, false);
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (myOnItemClickListener != null) {
-                    TextView txt = view.findViewById(R.id.nome_cidade);
-                    myOnItemClickListener.myOnItemClick(txt.getText().toString());
-                }
-            }
-        });
         return new MyFirstViewHolder(view);
     }
 
@@ -68,15 +58,14 @@ public class MyFirstAdapter extends RecyclerView.Adapter {
         ((MyFirstViewHolder) holder).bind(viagens.get(position));
         View view = holder.itemView;
 
-        view.setOnLongClickListener(new View.OnLongClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View view) {
-                if (myOnItemLongClickListener != null)
-                    myOnItemLongClickListener.myOnItemLongClick(position);
-                return false;
+            public void onClick(View view) {
+                if (myOnItemClickListener != null) {
+                    myOnItemClickListener.myOnItemClick(position);
+                }
             }
         });
-
     }
 
     @Override
@@ -85,18 +74,10 @@ public class MyFirstAdapter extends RecyclerView.Adapter {
     }
 
     public interface MyOnItemClickListener {
-        void myOnItemClick(String nome);
-    }
-
-    public interface MyOnItemLongClickListener {
-        void myOnItemLongClick(int position);
+        void myOnItemClick(int position);
     }
 
     public void setMyOnItemClickListener(MyOnItemClickListener myOnItemClickListener) {
         this.myOnItemClickListener = myOnItemClickListener;
-    }
-
-    public void setMyOnItemLongClickListener(MyOnItemLongClickListener myOnItemLongClickListener) {
-        this.myOnItemLongClickListener = myOnItemLongClickListener;
     }
 }

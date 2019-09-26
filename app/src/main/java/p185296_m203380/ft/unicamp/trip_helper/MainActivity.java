@@ -92,14 +92,7 @@ public class MainActivity extends AppCompatActivity
 
         mAdapter.setMyOnItemClickListener(new MyFirstAdapter.MyOnItemClickListener() {
             @Override
-            public void myOnItemClick(String nome) {
-                Toast.makeText(MainActivity.this, nome, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mAdapter.setMyOnItemLongClickListener(new MyFirstAdapter.MyOnItemLongClickListener() {
-            @Override
-            public void myOnItemLongClick(int position) {
+            public void myOnItemClick(int position) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("position", position);
                 BiographyFragment biography = new BiographyFragment();
