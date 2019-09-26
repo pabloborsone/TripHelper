@@ -1,8 +1,10 @@
 package p185296_m203380.ft.unicamp.trip_helper;
 
+import android.app.DatePickerDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class UserRegisterActivity extends AppCompatActivity {
+public class UserRegisterActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
     private String userBirthDate;
     private String userSex;
@@ -66,12 +68,6 @@ public class UserRegisterActivity extends AppCompatActivity {
     }
 
     private void addAllListeners() {
-        birthDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
-                userBirthDate = new GregorianCalendar(day, month, year).toString();
-            }
-        });
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -84,5 +80,10 @@ public class UserRegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+        userBirthDate = day + "/" + month + "/" + year;
     }
 }

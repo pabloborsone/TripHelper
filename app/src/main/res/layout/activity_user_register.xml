@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -21,16 +22,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_already_traveled_textview" />
-
-        <CalendarView
-            android:id="@+id/user_calendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_birth_date" />
+            app:layout_constraintTop_toBottomOf="@+id/user_already_traveled_textview"
+            app:layout_constraintVertical_bias="1.0" />
 
         <CheckBox
             android:id="@+id/user_already_traveled"
@@ -38,10 +31,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/yes"
-            android:textColor="@color/white"
-            android:textColorLink="@color/white"
-            android:buttonTint="@color/white"
-            android:shadowColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/user_already_traveled_textview"
             app:layout_constraintEnd_toEndOf="@+id/radioGroup"
             app:layout_constraintHorizontal_bias="1.0"
@@ -56,23 +45,10 @@
             android:layout_marginEnd="32dp"
             android:hint="@string/username_hint"
             android:inputType="textPersonName"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/username_textview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/username_textview"
             app:layout_constraintTop_toTopOf="@+id/username_textview" />
-
-        <EditText
-            android:id="@+id/user_age"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/user_age_hint"
-            android:inputType="numberDecimal"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/user_age_textview"
-            app:layout_constraintEnd_toEndOf="@+id/username"
-            app:layout_constraintStart_toStartOf="@+id/username"
-            app:layout_constraintTop_toTopOf="@+id/user_age_textview" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -80,44 +56,26 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/user_sex_textview"
-            app:layout_constraintEnd_toEndOf="@+id/user_age"
-            app:layout_constraintStart_toStartOf="@+id/user_age"
+            app:layout_constraintEnd_toEndOf="@+id/username"
+            app:layout_constraintStart_toStartOf="@+id/username"
             app:layout_constraintTop_toTopOf="@+id/user_sex_textview">
 
             <RadioButton
                 android:id="@+id/user_radio_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
-                android:textColor="@color/white"
-                android:textColorLink="@color/white"
-                android:buttonTint="@color/white"
-                android:shadowColor="@color/white"
                 android:text="@string/user_radio_male" />
 
             <RadioButton
                 android:id="@+id/user_radio_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
-                android:textColor="@color/white"
-                android:textColorLink="@color/white"
-                android:buttonTint="@color/white"
-                android:shadowColor="@color/white"
                 android:text="@string/user_radio_female" />
 
             <RadioButton
                 android:id="@+id/user_radio_others"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
-                android:textColor="@color/white"
-                android:textColorLink="@color/white"
-                android:buttonTint="@color/white"
-                android:shadowColor="@color/white"
                 android:text="@string/user_radio_others" />
         </RadioGroup>
 
@@ -132,24 +90,14 @@
             app:layout_constraintTop_toBottomOf="@+id/register_title" />
 
         <TextView
-            android:id="@+id/user_age_textview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/user_age_textview"
-            app:layout_constraintStart_toStartOf="@+id/username_textview"
-            app:layout_constraintTop_toBottomOf="@+id/username" />
-
-        <TextView
-            android:id="@+id/user_birth_date"
+            android:id="@+id/user_birth_date_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:gravity="center"
             android:text="@string/user_birth_date"
-            app:layout_constraintEnd_toEndOf="@+id/user_calendar"
-            app:layout_constraintStart_toStartOf="@+id/user_calendar"
-            app:layout_constraintTop_toBottomOf="@+id/user_age" />
+            app:layout_constraintStart_toStartOf="@+id/username_textview"
+            app:layout_constraintTop_toBottomOf="@+id/username" />
 
         <TextView
             android:id="@+id/register_title"
@@ -172,9 +120,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/user_sex_textview"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/user_age_textview"
-            app:layout_constraintTop_toBottomOf="@+id/user_calendar" />
+            app:layout_constraintStart_toStartOf="@+id/user_birth_date_textview"
+            app:layout_constraintTop_toBottomOf="@+id/user_birth_date_textview" />
 
         <TextView
             android:id="@+id/user_already_traveled_textview"
@@ -182,9 +129,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/user_already_traveled_textview"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/user_sex_textview"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <EditText
+            android:id="@+id/user_birth_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            app:layout_constraintBottom_toBottomOf="@+id/user_birth_date_textview"
+            app:layout_constraintEnd_toEndOf="@+id/username"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/user_birth_date_textview"
+            app:layout_constraintTop_toTopOf="@+id/user_birth_date_textview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
