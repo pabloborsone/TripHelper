@@ -1,9 +1,10 @@
 package p185296_m203380.ft.unicamp.trip_helper;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,11 +24,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import adapter.MyFirstAdapter;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import fragments.AlunosFragment;
 import fragments.AuthorsFragment;
 import fragments.BiographyFragment;
 import fragments.FragmentController;
 import fragments.MailFragment;
-import fragments.AlunosFragment;
 import viagens.Viagens;
 
 public class MainActivity extends AppCompatActivity
@@ -39,26 +42,42 @@ public class MainActivity extends AppCompatActivity
     public static final String STUDENTS_KEY = "students";
     public static final String BIOGRAPHY_KEY = "biography";
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
+
+    @BindView(R.id.alunos_recycler_view)
+    RecyclerView mRecyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
+        ButterKnife.bind(this);
+
+        if (getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USERNAME, null) == null) {
+            Intent intent = new Intent(this, UserRegisterActivity.class);
+            startActivity(intent);
+            this.finishAfterTransition();
+        } else {
+            setSupportActionBar(toolbar);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.addDrawerListener(toggle);
+            toggle.syncState();
+            navigationView.setNavigationItemSelectedListener(this);
+        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
-        RecyclerView mRecyclerView = findViewById(R.id.alunos_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
