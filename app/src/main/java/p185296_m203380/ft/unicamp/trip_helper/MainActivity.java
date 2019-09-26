@@ -108,9 +108,8 @@ public class MainActivity extends AppCompatActivity
         if (fragmentManager == null) {
             fragmentManager = this.getSupportFragmentManager();
         }
-        if (id == R.id.action_settings) {
-            return true;
-        } else if (id == R.id.action_contact) {
+
+        if (id == R.id.action_contact) {
             Fragment mailFragment = fragmentManager.findFragmentByTag(MainActivity.MAIL_KEY);
             if (mailFragment == null) {
                 mailFragment = new MailFragment();
