@@ -1,13 +1,11 @@
 package p185296_m203380.ft.unicamp.trip_helper;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +26,6 @@ import java.util.Arrays;
 import adapter.MyFirstAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import fragments.AlunosFragment;
 import fragments.AuthorsFragment;
 import fragments.BiographyFragment;
 import fragments.FragmentController;
@@ -153,11 +150,7 @@ public class MainActivity extends AppCompatActivity
             }
             replaceFragment(authorFragment, MainActivity.AUTHORS_KEY);
         } else if (id == R.id.nav_students) {
-            Fragment studentFragment = fragmentManager.findFragmentByTag(MainActivity.STUDENTS_KEY);
-            if (studentFragment == null) {
-                studentFragment = new AlunosFragment();
-            }
-            replaceFragment(studentFragment, MainActivity.STUDENTS_KEY);
+            
         } else if (id == R.id.nav_biography) {
             Fragment biographyFragment = fragmentManager.findFragmentByTag(MainActivity.BIOGRAPHY_KEY);
             if (biographyFragment == null) {
