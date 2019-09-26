@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Trip Helper</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_contacts">Contato</string>
+
+    <string name="menu_authors">Autores</string>
+    <string name="menu_students">Alunos</string>
+    <string name="menu_biography">Biografias</string>
+    <string name="menu_game_one">Jogo 1</string>
+    <string name="menu_game_two">Jogo 2</string>
+    <string name="menu_send">Send</string>
+
+    <string name="first_name">Pablo Borsone</string>
+    <string name="first_ra">RA: 185296</string>
+    <string name="first_description">Uma pessoa interessada pela vida e ainda mais por Android.</string>
+    <string name="second_name">Matheus Bonafé</string>
+    <string name="second_ra">RA: 203380</string>
+    <string name="second_description">Entusiasta por tudo que é tecnologia e basquete.</string>
+
+    <string name="menu_title">Communicate</string>
+
+    <string name="menu_home">Home</string>
+
+    <string name="menu_gallery">Gallery</string>
+
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="menu_tools">Tools</string>
+
+    <string name="menu_share">Share</string>
+
+    <string name="icon_text">what is going on</string>
+
+    <string name="to_recipient">Recipient:</string>
+
+    <string name="message">Type your Message</string>
+
+    <string name="send">Send</string>
+
+    <string name="password">Password:</string>
+
+    <string name="subject">Subject:</string>
+
+    <string name="linear_login">Login:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="random_text_not_found">Message not found</string>
+    <string name="mail_subject_hint">Type your Subject</string>
+    <string name="mail_password_hint">Type your Password</string>
+    <string name="mail_login_hint">Type your Login</string>
+    <string name="mail_recipient_hint">Type your Recipient</string>
+    <string name="main_welcome_text">Welcome! We hope you have a nice experience around here! (:</string>
+    <string name="authors_message_received">Mensagem:</string>
+    <string name="previous_biography_button_text">prev</string>
+    <string name="next_biography_button_text">next</string>
+    <string name="username_hint">Ex: Pablo</string>
+    <string name="username_textview">Nome</string>
+    <string name="register_title">Para começar a usar seu novo app, realize seu cadastro antes</string>
+    <string name="user_age_textview">Idade</string>
+    <string name="user_age_hint">Ex: 25</string>
+    <string name="user_sex_textview">Sexo</string>
+    <string name="user_radio_male">Masculino</string>
+    <string name="user_radio_female">Feminino</string>
+    <string name="user_radio_others">Outros</string>
+    <string name="user_already_traveled_textview">Já viajou para fora do país?</string>
+    <string name="yes">Sim</string>
+    <string name="user_birth_date">Data de Nascimento</string>
+    <string name="user_continue_button">Concluir</string>
+
+</resources>

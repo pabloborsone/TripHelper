@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="random_text_not_found">Message not found</string>
+    <string name="mail_subject_hint">Type your Subject</string>
+    <string name="mail_login_hint">Type your Login</string>
+    <string name="mail_recipient_hint">Type your Recipient</string>
+    <string name="main_welcome_text">Welcome! We hope you have a nice experience around here! (:</string>
+    <string name="authors_message_received">Mensagem:</string>
+    <string name="previous_biography_button_text">prev</string>
+    <string name="next_biography_button_text">next</string>
+    <string name="username_hint">Ex: Pablo</string>
+    <string name="username_textview">Nome</string>
+    <string name="register_title">Para começar a usar seu novo app, realize seu cadastro antes</string>
+    <string name="user_age_textview">Idade</string>
+    <string name="user_age_hint">Ex: 25</string>
+    <string name="user_sex_textview">Sexo</string>
+    <string name="user_radio_male">Masculino</string>
+    <string name="user_radio_female">Feminino</string>
+    <string name="user_radio_others">Outros</string>
+    <string name="user_already_traveled_textview">Já viajou para fora do país?</string>
+    <string name="yes">Sim</string>
+    <string name="user_birth_date">Data de Nascimento</string>
+    <string name="user_continue_button">Concluir</string>
+</resources>
