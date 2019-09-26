@@ -12,6 +12,7 @@
         <activity
             android:name="p185296_m203380.ft.unicamp.trip_helper.MainActivity"
             android:label="@string/app_name"
+            android:fontFamily="sans-serif-light"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name="fragments.AuthorsFragment" />
-        <activity android:name=".UserRegisterActivity" />
+        <activity android:name=".UserRegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

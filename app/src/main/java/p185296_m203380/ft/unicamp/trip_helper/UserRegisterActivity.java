@@ -1,36 +1,30 @@
 package p185296_m203380.ft.unicamp.trip_helper;
 
-import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.CalendarView;
-import android.widget.DatePicker;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.GregorianCalendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class UserRegisterActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+public class UserRegisterActivity extends AppCompatActivity {
 
-    private String userBirthDate;
     private String userSex;
+    private boolean alreadyTraveledAbroad = false;
 
     @BindView(R.id.username)
     EditText name;
 
-    @BindView(R.id.user_age)
-    EditText age;
-
-    @BindView(R.id.user_calendar)
-    CalendarView birthDate;
+    @BindView(R.id.user_birth_date)
+    EditText birthDate;
 
     @BindView(R.id.radioGroup)
     RadioGroup radioGroup;
@@ -43,7 +37,10 @@ public class UserRegisterActivity extends AppCompatActivity implements DatePicke
 
     @BindView(R.id.user_radio_others)
     RadioButton sexOthers;
-    
+
+    @BindView(R.id.user_already_traveled)
+    CheckBox checkBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,15 +53,18 @@ public class UserRegisterActivity extends AppCompatActivity implements DatePicke
     private void init() {
         SharedPreferences.Editor editor = getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).edit();
         editor.putString(Constants.USERNAME, name.getText().toString());
-        editor.putString(Constants.USER_AGE, age.getText().toString());
-        editor.putString(Constants.USER_BIRTH_DAY, userBirthDate);
+        editor.putString(Constants.USER_BIRTH_DAY, birthDate.getText().toString());
         editor.putString(Constants.USER_SEX, userSex);
+        editor.putBoolean(Constants.USER_TRAVELED_ABROAD, alreadyTraveledAbroad);
         editor.apply();
     }
 
     @OnClick(R.id.user_continue_button)
     public void onContinueButtonClick() {
         init();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        this.finishAfterTransition();
     }
 
     private void addAllListeners() {
@@ -75,15 +75,16 @@ public class UserRegisterActivity extends AppCompatActivity implements DatePicke
                     userSex = sexMale.getText().toString();
                 } else if (i == R.id.user_radio_female) {
                     userSex = sexFemale.getText().toString();
-                } else if (i == R.id.user_radio_others){
+                } else if (i == R.id.user_radio_others) {
                     userSex = sexOthers.getText().toString();
                 }
             }
         });
-    }
-
-    @Override
-    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        userBirthDate = day + "/" + month + "/" + year;
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                alreadyTraveledAbroad = b;
+            }
+        });
     }
 }

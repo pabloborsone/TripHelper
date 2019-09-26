@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "p185296_m203380.ft.unicamp.aula03_fragmentos"
+        applicationId "p185296_m203380.ft.unicamp.trip_helper"
         minSdkVersion 22
         targetSdkVersion 29
         versionCode 1

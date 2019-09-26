@@ -29,6 +29,7 @@
         android:paddingBottom="10dp"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
         app:layout_constraintBottom_toTopOf="@+id/nome_pais"
         app:layout_constraintStart_toStartOf="@+id/imagem_viagem"
         tools:text="Campinas" />
@@ -40,6 +41,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
         android:textColor="@color/white"
+        android:fontFamily="sans-serif-light"
         app:layout_constraintBottom_toBottomOf="@+id/imagem_viagem"
         app:layout_constraintStart_toStartOf="@+id/imagem_viagem"
         tools:text="Brazil" />
@@ -48,9 +50,14 @@
         android:id="@+id/descricao_viagem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagem_viagem" />
+        app:layout_constraintTop_toBottomOf="@+id/imagem_viagem"
+        app:layout_constraintVertical_bias="0.100000024" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

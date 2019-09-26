@@ -2,7 +2,7 @@
     <string name="app_name">Trip Helper</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">Seu guia para o melhor destino!</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -72,5 +72,6 @@
     <string name="yes">Sim</string>
     <string name="user_birth_date">Data de Nascimento</string>
     <string name="user_continue_button">Concluir</string>
+    <string name="user_date_hint">Ex: 12/12/1995</string>
 
 </resources>
