@@ -28,7 +28,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import fragments.DetailsFragment;
 import fragments.FragmentController;
-import fragments.MailFragment;
 import viagens.Viagens;
 
 public class MainActivity extends AppCompatActivity
@@ -119,15 +118,6 @@ public class MainActivity extends AppCompatActivity
 
         if (fragmentManager == null) {
             fragmentManager = this.getSupportFragmentManager();
-        }
-
-        if (id == R.id.action_contact) {
-            Fragment mailFragment = fragmentManager.findFragmentByTag(MainActivity.MAIL_KEY);
-            if (mailFragment == null) {
-                mailFragment = new MailFragment();
-            }
-            replaceFragment(mailFragment, MainActivity.MAIL_KEY);
-            return true;
         }
 
         return super.onOptionsItemSelected(item);
