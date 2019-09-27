@@ -2,17 +2,14 @@
     <string name="app_name">Trip Helper</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Seu guia para o melhor destino!</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Seja bem vindx ao Trip Helper!</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="action_contacts">Contato</string>
 
-    <string name="menu_authors">Autores</string>
-    <string name="menu_students">Alunos</string>
-    <string name="menu_biography">Biografias</string>
-    <string name="menu_game_one">Jogo 1</string>
-    <string name="menu_game_two">Jogo 2</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_details">Detalhes</string>
     <string name="menu_send">Send</string>
 
     <string name="first_name">Pablo Borsone</string>
@@ -23,8 +20,6 @@
     <string name="second_description">Entusiasta por tudo que é tecnologia e basquete.</string>
 
     <string name="menu_title">Communicate</string>
-
-    <string name="menu_home">Home</string>
 
     <string name="menu_gallery">Gallery</string>
 

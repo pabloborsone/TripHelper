@@ -26,8 +26,7 @@ import java.util.Arrays;
 import adapter.MyFirstAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import fragments.AuthorsFragment;
-import fragments.BiographyFragment;
+import fragments.DetailsFragment;
 import fragments.FragmentController;
 import fragments.MailFragment;
 import viagens.Viagens;
@@ -38,8 +37,7 @@ public class MainActivity extends AppCompatActivity
     private FragmentManager fragmentManager;
     public static final String AUTHORS_KEY = "authors";
     public static final String MAIL_KEY = "mail";
-    public static final String STUDENTS_KEY = "students";
-    public static final String BIOGRAPHY_KEY = "biography";
+    public static final String DETAILS_KEY = "details";
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -92,9 +90,9 @@ public class MainActivity extends AppCompatActivity
             public void myOnItemClick(int position) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("position", position);
-                BiographyFragment biography = new BiographyFragment();
+                DetailsFragment biography = new DetailsFragment();
                 biography.setArguments(bundle);
-                replaceFragment(biography, MainActivity.BIOGRAPHY_KEY);
+                replaceFragment(biography, MainActivity.DETAILS_KEY);
             }
         });
     }
@@ -143,20 +141,18 @@ public class MainActivity extends AppCompatActivity
             fragmentManager = this.getSupportFragmentManager();
         }
 
-        if (id == R.id.nav_authors) {
-            Fragment authorFragment = fragmentManager.findFragmentByTag(MainActivity.AUTHORS_KEY);
-            if (authorFragment == null) {
-                authorFragment = new AuthorsFragment();
+        if (id == R.id.nav_home) {
+            fragmentManager.popBackStack();
+        } else if (id == R.id.nav_perfil) {
+            Intent intent = new Intent(this, UserRegisterActivity.class);
+            startActivity(intent);
+            this.finishAfterTransition();
+        } else if (id == R.id.nav_details) {
+            Fragment detailsFragment = fragmentManager.findFragmentByTag(MainActivity.DETAILS_KEY);
+            if (detailsFragment == null) {
+                detailsFragment = new DetailsFragment();
             }
-            replaceFragment(authorFragment, MainActivity.AUTHORS_KEY);
-        } else if (id == R.id.nav_students) {
-
-        } else if (id == R.id.nav_biography) {
-            Fragment biographyFragment = fragmentManager.findFragmentByTag(MainActivity.BIOGRAPHY_KEY);
-            if (biographyFragment == null) {
-                biographyFragment = new BiographyFragment();
-            }
-            replaceFragment(biographyFragment, MainActivity.BIOGRAPHY_KEY);
+            replaceFragment(detailsFragment, MainActivity.DETAILS_KEY);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

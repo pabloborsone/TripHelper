@@ -45,9 +45,6 @@ public class UserRegisterActivity extends AppCompatActivity {
     @BindView(R.id.user_sex)
     TextView userSexTextView;
 
-    @BindView(R.id.user_check_box_text)
-    TextView checkBoxText;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,18 +90,21 @@ public class UserRegisterActivity extends AppCompatActivity {
     private void alreadyRegistered() {
         radioGroup.setVisibility(View.GONE);
         userSexTextView.setVisibility(View.VISIBLE);
-        checkBoxText.setVisibility(View.VISIBLE);
-        checkBox.setVisibility(View.GONE);
         userSexTextView.setText(getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_SEX, null));
-        checkBoxText.setText(getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_TRAVELED_ABROAD, null));
-        name.setText((getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USERNAME, null)));
-        birthDate.setText((getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_BIRTH_DAY, null)));
+        checkBox.setChecked(getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getBoolean(Constants.USER_TRAVELED_ABROAD, false));
+        name.setText(getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USERNAME, null));
+        birthDate.setText(getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_BIRTH_DAY, null));
     }
 
     private boolean hasRegister() {
-        return (!getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_SEX, null).isEmpty()
-                || !getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_TRAVELED_ABROAD, null).isEmpty()
-                || !getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USERNAME, null).isEmpty()
-                || !getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USER_BIRTH_DAY, null).isEmpty());
+        return (!(getSharedPreferences(Constants.USER_INFO, MODE_PRIVATE).getString(Constants.USERNAME, null) == null));
+    }
+
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        this.finishAfterTransition();
     }
 }

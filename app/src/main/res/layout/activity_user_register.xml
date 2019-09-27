@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/japan"
-    android:isScrollContainer="false"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:isScrollContainer="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -36,7 +35,7 @@
             android:text="@string/yes"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/user_already_traveled_textview"
-            app:layout_constraintEnd_toEndOf="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="@+id/username"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/user_already_traveled_textview"
             app:layout_constraintTop_toTopOf="@+id/user_already_traveled_textview" />
@@ -47,14 +46,28 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/white"
             android:hint="@string/username_hint"
             android:inputType="textPersonName"
             android:textColor="@color/white"
-            android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/username_textview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/username_textview"
             app:layout_constraintTop_toTopOf="@+id/username_textview" />
+
+        <EditText
+            android:id="@+id/user_birth_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/user_date_hint"
+            android:inputType="date"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/username"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/user_birth_date_textview"
+            app:layout_constraintTop_toBottomOf="@+id/user_birth_date_textview" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -131,10 +144,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-light"
             android:text="@string/register_title"
             android:textColor="@color/white"
             android:textSize="22sp"
-            android:fontFamily="sans-serif-light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -158,31 +171,6 @@
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/user_sex_textview"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-        <EditText
-            android:id="@+id/user_birth_date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:ems="10"
-            android:inputType="date"
-            android:textColor="@color/white"
-            android:hint="@string/user_date_hint"
-            app:layout_constraintEnd_toEndOf="@+id/username"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/user_birth_date_textview"
-            app:layout_constraintTop_toBottomOf="@+id/user_birth_date_textview" />
-
-        <TextView
-            android:id="@+id/user_check_box_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/user_already_traveled_textview"
-            app:layout_constraintEnd_toEndOf="@+id/user_sex"
-            app:layout_constraintStart_toEndOf="@+id/user_already_traveled_textview"
-            app:layout_constraintTop_toTopOf="@+id/user_already_traveled_textview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

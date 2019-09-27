@@ -19,12 +19,12 @@ import p185296_m203380.ft.unicamp.trip_helper.R;
 import viagens.Viagem;
 import viagens.Viagens;
 
-public class BiographyFragment extends Fragment {
+public class DetailsFragment extends Fragment {
 
     private View view;
     private int position = 0;
 
-    public BiographyFragment() {
+    public DetailsFragment() {
     }
 
     @Override

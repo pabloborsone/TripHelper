@@ -40,13 +40,7 @@ public class MailFragment extends Fragment implements FragmentController {
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText subject = MailFragment.this.view.findViewById(R.id.edit_message);
-                String subjectText = subject.getText().toString();
-                Bundle bundle = new Bundle();
-                bundle.putString("message", subjectText);
-                AuthorsFragment authorsFragment = new AuthorsFragment();
-                authorsFragment.setArguments(bundle);
-                replaceFragment(authorsFragment, MainActivity.AUTHORS_KEY);
+
             }
         });
     }
