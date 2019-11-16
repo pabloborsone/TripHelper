@@ -33,6 +33,19 @@
         app:layout_constraintStart_toStartOf="@+id/imagem_viagem" />
 
     <TextView
+        android:id="@+id/clima_cidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toTopOf="@+id/descricao_viagem"
+        app:layout_constraintStart_toStartOf="@+id/nome_cidade" />
+
+    <TextView
         android:id="@+id/nome_pais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

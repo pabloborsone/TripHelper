@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import p185296_m203380.ft.unicamp.trip_helper.R;
+import p185296_m203380.ft.unicamp.trip_helper.RetrieveFeedTask;
 import viagens.Viagem;
 
 public class MyFirstAdapter extends RecyclerView.Adapter {
@@ -28,6 +29,7 @@ public class MyFirstAdapter extends RecyclerView.Adapter {
         private TextView txtCity;
         private TextView txtCountry;
         private TextView txtDescription;
+        private TextView txtClimate;
 
         public MyFirstViewHolder(View itemView) {
             super(itemView);
@@ -35,6 +37,7 @@ public class MyFirstAdapter extends RecyclerView.Adapter {
             txtCity = itemView.findViewById(R.id.nome_cidade);
             txtCountry = itemView.findViewById(R.id.nome_pais);
             txtDescription = itemView.findViewById(R.id.descricao_viagem);
+           // txtClimate = new RetrieveFeedTask(itemView.findViewById(R.id.clima_cidade);
         }
 
         public void bind(final Viagem viagem) {
