@@ -34,9 +34,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentController {
 
     private FragmentManager fragmentManager;
-    public static final String AUTHORS_KEY = "authors";
-    public static final String MAIL_KEY = "mail";
     public static final String DETAILS_KEY = "details";
+    public static final String ABOUT_KEY = "about";
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -137,12 +136,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, UserRegisterActivity.class);
             startActivity(intent);
             this.finishAfterTransition();
-        } else if (id == R.id.nav_details) {
-            Fragment detailsFragment = fragmentManager.findFragmentByTag(MainActivity.DETAILS_KEY);
-            if (detailsFragment == null) {
-                detailsFragment = new DetailsFragment();
-            }
-            replaceFragment(detailsFragment, MainActivity.DETAILS_KEY);
+        } else if (id == R.id.nav_about) {
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
+            this.finishAfterTransition();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
