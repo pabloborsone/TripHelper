@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,7 +37,6 @@ public class MainActivity extends AppCompatActivity
 
     private FragmentManager fragmentManager;
     public static final String DETAILS_KEY = "details";
-    public static final String ABOUT_KEY = "about";
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -83,15 +84,16 @@ public class MainActivity extends AppCompatActivity
         MyFirstAdapter mAdapter = new MyFirstAdapter(new ArrayList<>(Arrays.asList(Viagens.viagens)));
         mRecyclerView.setAdapter(mAdapter);
 
-        mAdapter.setMyOnItemClickListener(new MyFirstAdapter.MyOnItemClickListener() {
-            @Override
-            public void myOnItemClick(int position) {
-                Bundle bundle = new Bundle();
-                bundle.putInt("position", position);
-                DetailsFragment biography = new DetailsFragment();
-                biography.setArguments(bundle);
-                replaceFragment(biography, MainActivity.DETAILS_KEY);
-            }
+        mAdapter.setMyOnItemClickListener(position -> {
+            Bundle bundle = new Bundle();
+            bundle.putInt("position", position);
+            DetailsFragment biography = new DetailsFragment();
+            biography.setArguments(bundle);
+            DatabaseReference db;
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            db = database.getReference(Constants.USER_LAST_VISIT);
+            db.setValue(Arrays.asList(Viagens.viagens).get(position).getCidade());
+            replaceFragment(biography, MainActivity.DETAILS_KEY);
         });
     }
 
@@ -109,17 +111,6 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (fragmentManager == null) {
-            fragmentManager = this.getSupportFragmentManager();
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

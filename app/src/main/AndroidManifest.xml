@@ -25,6 +25,10 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".AboutActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
