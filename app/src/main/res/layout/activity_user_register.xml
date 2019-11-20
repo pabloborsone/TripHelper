@@ -16,29 +16,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
             android:text="@string/user_continue_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_already_traveled_textview"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <CheckBox
-            android:id="@+id/user_already_traveled"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:buttonTint="@color/white"
-            android:text="@string/yes"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/user_already_traveled_textview"
-            app:layout_constraintEnd_toEndOf="@+id/username"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/user_already_traveled_textview"
-            app:layout_constraintTop_toTopOf="@+id/user_already_traveled_textview" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/username"
@@ -69,51 +52,17 @@
             app:layout_constraintStart_toStartOf="@+id/user_birth_date_textview"
             app:layout_constraintTop_toBottomOf="@+id/user_birth_date_textview" />
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
+        <EditText
+            android:id="@+id/user_email_input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/user_sex_textview"
-            app:layout_constraintEnd_toEndOf="@+id/username"
-            app:layout_constraintStart_toStartOf="@+id/username"
-            app:layout_constraintTop_toTopOf="@+id/user_sex_textview">
-
-            <RadioButton
-                android:id="@+id/user_radio_male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/white"
-                android:text="@string/user_radio_male"
-                android:textColor="@color/white" />
-
-            <RadioButton
-                android:id="@+id/user_radio_female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/white"
-                android:text="@string/user_radio_female"
-                android:textColor="@color/white" />
-
-            <RadioButton
-                android:id="@+id/user_radio_others"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/white"
-                android:text="@string/user_radio_others"
-                android:textColor="@color/white" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/user_sex"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:inputType="textEmailAddress"
             android:textColor="@color/white"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/user_sex_textview"
-            app:layout_constraintEnd_toEndOf="@+id/username"
-            app:layout_constraintStart_toStartOf="@+id/username"
-            app:layout_constraintTop_toTopOf="@+id/user_sex_textview" />
+            app:layout_constraintEnd_toEndOf="@+id/user_birth_date"
+            app:layout_constraintStart_toStartOf="@+id/user_email"
+            app:layout_constraintTop_toBottomOf="@+id/user_email" />
 
         <TextView
             android:id="@+id/username_textview"
@@ -153,24 +102,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/user_sex_textview"
-            android:layout_width="0dp"
+            android:id="@+id/user_email"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/user_sex_textview"
+            android:text="@string/user_email"
             android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/user_birth_date_textview"
+            app:layout_constraintStart_toStartOf="@+id/user_birth_date"
             app:layout_constraintTop_toBottomOf="@+id/user_birth_date" />
-
-        <TextView
-            android:id="@+id/user_already_traveled_textview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/user_already_traveled_textview"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/user_sex_textview"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

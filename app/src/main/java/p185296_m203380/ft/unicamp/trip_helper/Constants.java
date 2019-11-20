@@ -5,5 +5,5 @@ public interface Constants {
     String USERNAME = "user_name";
     String USER_BIRTH_DAY = "user_birth_day";
     String USER_SEX = "user_sex";
-    String USER_TRAVELED_ABROAD = "user_traveled_abroad";
+    String USER_EMAIL = "user_email";
 }

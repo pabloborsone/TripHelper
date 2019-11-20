@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "506316214086",
+    "firebase_url": "https://triphelper-df226.firebaseio.com",
+    "project_id": "triphelper-df226",
+    "storage_bucket": "triphelper-df226.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506316214086:android:e345db77c17782338e5f47",
+        "android_client_info": {
+          "package_name": "p185296_m203380.ft.unicamp.trip_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506316214086-fgjbino4pl215e1pl23hno426pduphnu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "p185296_m203380.ft.unicamp.trip_helper",
+            "certificate_hash": "82bed05c4cb7bcfe5abbc793bc48a14af58cc8e8"
+          }
+        },
+        {
+          "client_id": "506316214086-oi3p9ioos0en9l88h19odo32jpmkk0pv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmSLL6Ra0p5H_AnWpOup-1AvIaB6uksEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506316214086-oi3p9ioos0en9l88h19odo32jpmkk0pv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

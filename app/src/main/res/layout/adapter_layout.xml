@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="300dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:clickable="true"
     android:focusable="true"
@@ -17,32 +18,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/campinas"/>
 
     <TextView
         android:id="@+id/nome_cidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-light"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:textSize="18sp"
-        android:fontFamily="sans-serif-light"
         app:layout_constraintBottom_toTopOf="@+id/nome_pais"
-        app:layout_constraintStart_toStartOf="@+id/imagem_viagem" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imagem_viagem"
+        app:layout_constraintTop_toTopOf="@+id/imagem_viagem"
+        tools:text="Campinas" />
 
     <TextView
         android:id="@+id/nome_pais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif"
         android:textColor="@color/white"
-        android:fontFamily="sans-serif-light"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/imagem_viagem"
-        app:layout_constraintStart_toStartOf="@+id/imagem_viagem" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imagem_viagem"
+        app:layout_constraintTop_toTopOf="@+id/imagem_viagem"
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
         android:id="@+id/descricao_viagem"
@@ -53,7 +58,6 @@
         android:fontFamily="sans-serif-light"
         android:maxLines="3"
         android:textColor="@color/black"
-        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

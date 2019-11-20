@@ -58,12 +58,9 @@ public class MyFirstAdapter extends RecyclerView.Adapter {
         ((MyFirstViewHolder) holder).bind(viagens.get(position));
         View view = holder.itemView;
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (myOnItemClickListener != null) {
-                    myOnItemClickListener.myOnItemClick(position);
-                }
+        view.setOnClickListener(view1 -> {
+            if (myOnItemClickListener != null) {
+                myOnItemClickListener.myOnItemClick(position);
             }
         });
     }

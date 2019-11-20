@@ -38,5 +38,6 @@
     <string name="user_date_hint">Ex: 12/12/1995</string>
     <string name="github_text">https://github.com/pabloborsone/TripHelper</string>
     <string name="github_title">Para mais informações sobre este trabalho, acesse o link abaixo!</string>
+    <string name="user_email">E-mail:</string>
 
 </resources>
