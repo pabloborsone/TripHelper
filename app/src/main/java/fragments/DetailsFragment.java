@@ -13,8 +13,6 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import p185296_m203380.ft.unicamp.trip_helper.R;
 import viagens.Viagem;
 import viagens.Viagens;
@@ -31,7 +29,7 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (view == null) {
-            view = inflater.inflate(R.layout.biography_fragment, container, false);
+            view = inflater.inflate(R.layout.details_fragment, container, false);
         }
 
 
